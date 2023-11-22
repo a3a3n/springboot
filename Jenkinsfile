@@ -1,4 +1,9 @@
-pipeline {
+
+  
+
+     
+       
+   pipeline {
     agent any
 
      stages { 
@@ -12,8 +17,7 @@ pipeline {
          stage('Zip Code') {
              steps {
                  // Zip the code in the current directory
-                 sh './gradlew build'
-                 sh 'zip -r build.zip build'
+                 sh 'zip -r java_spring.zip .'
              }
          }
 
@@ -21,7 +25,7 @@ pipeline {
              steps {
                  // Use GCP credentials to upload the code to GCR
                  withCredentials([file(credentialsId: 'fa0277d0-1428-449d-987c-001e1aed3bb3', variable: 'GCP_CREDENTIALS')]) {
-                     sh ' gsutil cp build.zip gs://java_code/${BUILD_ID}' 
+                     sh ' gsutil cp java_spring.zip gs://java_code/java_spring.zip' 
                     
                  }
              }
@@ -55,7 +59,7 @@ pipeline {
              sshagent(['eed58fa2-36d4-49f6-86f3-ef8b57bbb9be']) {
                  // Use GCP credentials to upload the code to GCR
                  withCredentials([file(credentialsId: 'fa0277d0-1428-449d-987c-001e1aed3bb3', variable: 'GCP_CREDENTIALS')]) {
-                     sh 'ssh -tt anantharamachandranb@34.93.234.231 gsutil cp /home/anantharamachandranb/spring_builds/archive.zip gs://java_builds/${BUILD_ID}'
+                     sh 'ssh -tt anantharamachandranb@34.93.234.231 gsutil cp /home/anantharamachandranb/spring_builds/archive.zip gs://java_builds/archive.zip/${BUILD_ID}'
                      //sh ' gsutil cp build gs://java_builds/${BUILD_ID}' 
                     
                  }
