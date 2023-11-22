@@ -54,7 +54,7 @@ pipeline {
              sshagent(['eed58fa2-36d4-49f6-86f3-ef8b57bbb9be']) {
                  // Use GCP credentials to upload the code to GCR
                  withCredentials([file(credentialsId: 'fa0277d0-1428-449d-987c-001e1aed3bb3', variable: 'GCP_CREDENTIALS')]) {
-                     sh 'ssh -tt anantharamachandranb@35.244.9.36 cd /home/anantharamachandranb/spring_builds && gsutil cp archive.zip gs://java_builds/${BUILD_ID}'
+                     sh 'ssh -tt anantharamachandranb@35.244.9.36 gsutil cp /home/anantharamachandranb/spring_builds/archive.zip gs://java_builds/${BUILD_ID}'
                      //sh ' gsutil cp build gs://java_builds/${BUILD_ID}' 
                     
                  }
