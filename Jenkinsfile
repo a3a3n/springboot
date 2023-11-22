@@ -78,21 +78,22 @@
             }
         }
 
-         environment {
+        
+
+    
+        stage('Download Latest Version') {
+           environment {
         GOOGLE_CLOUD_BUCKET = 'java_builds'
         OBJECT_NAME = 'archive.zip/${BUILD_ID}'
         LOCAL_PATH = '/home/anantharamachandranb'
     }
-
-    
-        stage('Download Latest Version') {
             steps {
                  sshagent(['eed58fa2-36d4-49f6-86f3-ef8b57bbb9be']) {
                     // Set the environment variable for the latest version number
-                    def latestVersion = sh(script: "gsutil ls -la gs://${GOOGLE_CLOUD_BUCKET}/${OBJECT_NAME} | grep \"${OBJECT_NAME}\" | head -n 1 | awk '{print \$1}'", returnStdout: true).trim()
+                    def latestVersion = sh(script: "gsutil ls -la gs://${GOOGLE_CLOUD_BUCKET}/${OBJECT_NAME} | grep \"${OBJECT_NAME}\" | head -n 1 | awk '{print \$1}'", returnStdout: true).trim()'
 
                     // Download the latest version
-                    sh "ssh -tt anantharamachandranb@34.93.234.231 gsutil cp gs://${GOOGLE_CLOUD_BUCKET}/${OBJECT_NAME}#${latestVersion} ${LOCAL_PATH}"
+                    sh 'ssh -tt anantharamachandranb@34.93.234.231 gsutil cp gs://${GOOGLE_CLOUD_BUCKET}/${OBJECT_NAME}#${latestVersion} ${LOCAL_PATH}'
                 }
             }
         }
