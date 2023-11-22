@@ -84,7 +84,7 @@
         stage('Download Latest Version') {
            environment {
         GOOGLE_CLOUD_BUCKET = 'java_builds'
-        OBJECT_NAME = 'archive.zip/${BUILD_ID}'
+        OBJECT_NAME = 'archive.zip'
         LOCAL_PATH = '/home/anantharamachandranb'
     }
             steps {
