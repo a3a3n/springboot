@@ -43,7 +43,7 @@ pipeline {
                     // Your build commands go here
                     sh 'ssh -tt anantharamachandranb@35.244.9.36 "cd /home/anantharamachandranb/unzipped && ./gradlew build"'
                    // sh 'ssh -tt anantharamachandranb@35.244.9.36 ./gradlew build'
-                    sh 'ssh -tt anantharamachandranb@35.244.9.36 "cd /home/anantharamachandranb/unzipped && rm -rf /home/anantharamachandranb/spring_builds &&zip -r archive.zip build && mv archive.zip /home/anantharamachandranb/spring_builds"'
+                    sh 'ssh -tt anantharamachandranb@35.244.9.36 "cd /home/anantharamachandranb/unzipped &&zip -r archive.zip build && mv archive.zip /home/anantharamachandranb/spring_builds"'
                 }
             }
 
