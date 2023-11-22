@@ -59,7 +59,7 @@
              sshagent(['eed58fa2-36d4-49f6-86f3-ef8b57bbb9be']) {
                  // Use GCP credentials to upload the code to GCR
                  withCredentials([file(credentialsId: 'fa0277d0-1428-449d-987c-001e1aed3bb3', variable: 'GCP_CREDENTIALS')]) {
-                     sh 'ssh -tt anantharamachandranb@34.93.234.231 gsutil cp /home/anantharamachandranb/spring_builds/archive.zip gs://java_builds/archive.zip/${BUILD_ID}'
+                     sh 'ssh -tt anantharamachandranb@34.93.234.231 gsutil cp /home/anantharamachandranb/spring_builds/archive.zip gs://java_builds/archive.zip'
                      //sh ' gsutil cp build gs://java_builds/${BUILD_ID}' 
                     
                  }
@@ -71,7 +71,7 @@
             steps{ 
                 sshagent(['eed58fa2-36d4-49f6-86f3-ef8b57bbb9be']) {
                     sh 'ssh -tt  -oStrictHostKeyChecking=no anantharamachandranb@34.93.234.231 pwd'
-                    sh 'ssh -tt anantharamachandranb@34.93.234.231 gsutil cp gs://java_builds/archive.zip/${BUILD_ID} /home/anantharamachandranb'
+                    sh 'ssh -tt anantharamachandranb@34.93.234.231 gsutil cp gs://java_builds/archive.zip/ /home/anantharamachandranb'
                    // sh 'ssh -tt anantharamachandranb@34.93.234.231 unzip -o archive.zip -d /var/www/html'
                     
                 }
