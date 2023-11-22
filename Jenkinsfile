@@ -30,7 +30,7 @@ pipeline {
            
 
         stage('ssh-agent-into the vm'){
-            steps{
+            steps{ 
                 sshagent(['eed58fa2-36d4-49f6-86f3-ef8b57bbb9be']) {
                     sh 'ssh -tt  -oStrictHostKeyChecking=no anantharamachandranb@35.244.9.36 pwd'
                     sh 'ssh -tt anantharamachandranb@35.244.9.36 gsutil cp gs://java_code/java_spring.zip ./'
