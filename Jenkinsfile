@@ -71,8 +71,8 @@
             steps{ 
                 sshagent(['eed58fa2-36d4-49f6-86f3-ef8b57bbb9be']) {
                     sh 'ssh -tt  -oStrictHostKeyChecking=no anantharamachandranb@34.93.234.231 pwd'
-                    sh 'ssh -tt anantharamachandranb@34.93.234.231 gsutil cp gs://java_builds/archive.zip/${BUILD_ID} ./'
-                    sh 'ssh -tt anantharamachandranb@34.93.234.231 unzip -o archive.zip -d /var/www/html'
+                    sh 'ssh -tt anantharamachandranb@34.93.234.231 gsutil cp gs://java_builds/archive.zip/${BUILD_ID} ./ && unzip -o archive.zip -d /var/www/html'
+                   // sh 'ssh -tt anantharamachandranb@34.93.234.231 unzip -o archive.zip -d /var/www/html'
                     
                 }
             }
