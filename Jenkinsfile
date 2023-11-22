@@ -2,7 +2,7 @@ pipeline {
     agent any
 
      stages { 
-    //     stage('Checkout Code') {
+    //     // stage('Checkout Code') {
     //         steps {
     //             // Check out the code from the GitHub repository 
     //             checkout scm   
@@ -42,7 +42,7 @@ pipeline {
         stage('ssh-agent-into the vm'){
             steps{
                 sshagent(['eed58fa2-36d4-49f6-86f3-ef8b57bbb9be']) {
-                    sh 'ssh -tt anantharamachandranb@35.244.9.36 pwd'
+                    sh 'ssh -tt -o anantharamachandranb@35.244.9.36 pwd'
                    // sh 'ssh -tt anantharamachandranb@34.100.238.195 gsutil cp gs://java_code/java_spring.zip/'
                     //sh 'ssh -tt anantharamachandranb@34.100.238.195 unzip java_spring.zip -d /var/www/html/my-spring-boot-app'
                     
