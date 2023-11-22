@@ -84,7 +84,7 @@
         LOCAL_PATH = '/home/anantharamachandranb'
     }
 
-    stages {
+    
         stage('Download Latest Version') {
             steps {
                  sshagent(['eed58fa2-36d4-49f6-86f3-ef8b57bbb9be']) {
@@ -96,8 +96,7 @@
                 }
             }
         }
-    }
-  
+    
 
      
        
