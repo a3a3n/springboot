@@ -8,7 +8,7 @@ pipeline {
     //             checkout scm   
     //         }
     //     }
-        
+         
     //     stage('Zip Code') {
     //         steps {
     //             // Zip the code in the current directory
