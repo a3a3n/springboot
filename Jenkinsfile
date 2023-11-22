@@ -41,7 +41,7 @@ pipeline {
             steps {
                 sshagent(['eed58fa2-36d4-49f6-86f3-ef8b57bbb9be']) {
                     // Your build commands go here
-                    sh 'ssh -tt anantharamachandranb@35.244.9.36 cd /home/anantharamachandranb/unzipped
+                    sh 'ssh -tt anantharamachandranb@35.244.9.36 cd /home/anantharamachandranb/unzipped'
                     sh 'ssh -tt anantharamachandranb@35.244.9.36 ./gradlew build'
                     sh 'ssh -tt anantharamachandranb@35.244.9.36  mv build /home/anantharamachandranb/spring_builds/'
                 }
