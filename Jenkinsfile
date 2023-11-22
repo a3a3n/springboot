@@ -12,7 +12,8 @@ pipeline {
          stage('Zip Code') {
              steps {
                  // Zip the code in the current directory
-                 sh 'zip -r java_spring.zip .'
+                 sh './gradlew build'
+                 sh 'zip -r build.zip build'
              }
          }
 
@@ -20,7 +21,7 @@ pipeline {
              steps {
                  // Use GCP credentials to upload the code to GCR
                  withCredentials([file(credentialsId: 'fa0277d0-1428-449d-987c-001e1aed3bb3', variable: 'GCP_CREDENTIALS')]) {
-                     sh ' gsutil cp java_spring.zip gs://java_code/java_spring.zip' 
+                     sh ' gsutil cp build.zip gs://java_code/${BUILD_ID}' 
                     
                  }
              }
