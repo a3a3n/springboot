@@ -49,6 +49,7 @@ pipeline {
         }
 
           stage('Build upload to bucket') {
+              steps {
              sshagent(['eed58fa2-36d4-49f6-86f3-ef8b57bbb9be']) {
                  // Use GCP credentials to upload the code to GCR
                  withCredentials([file(credentialsId: 'fa0277d0-1428-449d-987c-001e1aed3bb3', variable: 'GCP_CREDENTIALS')]) {
@@ -58,6 +59,7 @@ pipeline {
                  }
              }
          }
+     }
   
 
      
