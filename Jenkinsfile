@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    // stages { 
+     stages { 
     //     stage('Checkout Code') {
     //         steps {
     //             // Check out the code from the GitHub repository 
