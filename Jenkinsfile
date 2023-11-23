@@ -84,7 +84,7 @@
                       script {
                     //sh 'ssh -tt  -oStrictHostKeyChecking=no anantharamachandranb@34.93.234.231 pwd'
                     sh 'ssh -tt anantharamachandranb@34.93.234.231 sudo -s unzip -o archive.zip -d /var/www/html/my-spring-boot-app '
-                    def sshCommand = """ssh -tt anantharamachandranb@34.93.234.231 "cd /var/www/html/my-spring-boot-app && ./gradlew bootRun" """
+                    def sshCommand = """ssh -tt anantharamachandranb@34.93.234.231 "cd /var/www/html/my-spring-boot-app && sudo ./gradlew bootRun" """
                     sh(sshCommand)
                     //sh 'ssh -tt anantharamachandranb@34.93.234.231 "sudo -s cd /var/www/html/my-spring-boot-app && ls" '
                     
