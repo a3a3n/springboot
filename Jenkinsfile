@@ -82,8 +82,8 @@
             steps{ 
                 sshagent(['eed58fa2-36d4-49f6-86f3-ef8b57bbb9be']) {
                     sh 'ssh -tt  -oStrictHostKeyChecking=no anantharamachandranb@34.93.234.231 pwd'
-                    sh 'ssh -tt anantharamachandranb@34.93.234.231 sudo -s unzip -o archive.zip -d /var/www/html/my-spring-boot-app && cd /var/www/html/my-spring-boot-app ./gradlew bootrun'
-                   // sh 'ssh -tt  -oStrictHostKeyChecking=no anantharamachandranb@34.93.234.231 cd /var/www/html/my-spring-boot-app '
+                    sh 'ssh -tt anantharamachandranb@34.93.234.231 sudo -s unzip -o archive.zip -d /var/www/html/my-spring-boot-app '
+                    sh 'ssh -tt anantharamachandranb@34.93.234.231 cd /var/www/html/my-spring-boot-app ./gradlew bootrun '
                     
                     
                    // sh 'ssh -tt anantharamachandranb@34.93.234.231 unzip -o archive.zip -d /var/www/html'
