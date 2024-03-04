@@ -13,6 +13,7 @@ COPY gradlew .
 COPY src src
 
 # Build the application
+RUN chmod +x gradlew
 RUN ./gradlew build -x test
 
 # Use AdoptOpenJDK 11 as base image for the runtime environment
