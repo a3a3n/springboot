@@ -9,4 +9,4 @@ steps:
       - '-c'
       - |
         gcloud auth activate-service-account --key-file=/workspace/project-123-416205-f4c65ed9fb52.json
-        gcloud config set project project-123
+        gcloud config set project project-123-416205
