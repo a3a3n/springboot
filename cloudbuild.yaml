@@ -16,3 +16,6 @@ steps:
     args:
       - '-c'
       - 'docker login -u _json_key --password-stdin https://asia-south1-docker.pkg.dev < /workspace/project-123-416205-f4c65ed9fb52.json'
+      # Build the Docker image using Dockerfile from the source repository
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'asia-south1-docker.pkg.dev/project-123-416205/artifact-123', '.'] # Assumes Dockerfile is in the root directory of the repository
