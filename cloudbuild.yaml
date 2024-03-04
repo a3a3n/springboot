@@ -2,3 +2,11 @@ steps:
   # Copy the service account key to the workspace
   - name: 'gcr.io/cloud-builders/gsutil'
     args: ['cp', 'gs://pucket-123/key/project-123-416205-f4c65ed9fb52.json', '/workspace/project-123-416205-f4c65ed9fb52.json']
+  # Authenticate and set the project
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        gcloud auth activate-service-account --key-file=/workspace/project-123-416205-f4c65ed9fb52.json
+        gcloud config set project project-123
