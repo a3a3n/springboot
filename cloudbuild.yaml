@@ -1,1 +1,4 @@
-
+steps:
+  # Copy the service account key to the workspace
+  - name: 'gcr.io/cloud-builders/gsutil'
+    args: ['cp', 'gs://pucket-123/key/project-123-416205-f4c65ed9fb52.json', '/workspace/project-123-416205-f4c65ed9fb52.json']
