@@ -14,7 +14,7 @@ COPY src src
 
 # Build the application
 RUN chmod +x gradlew
-RUN ./gradlew build -x test
+RUN ./gradlew build 
 
 # Use AdoptOpenJDK 11 as base image for the runtime environment
 FROM adoptopenjdk:11-jre-hotspot
